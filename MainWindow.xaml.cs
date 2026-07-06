@@ -49,6 +49,8 @@ namespace StreamMultiview
             wb2.EnsureCoreWebView2Async();
             wb3.EnsureCoreWebView2Async();
             wb4.EnsureCoreWebView2Async();
+
+            NavigateOnLoad();
         }
 
         
@@ -154,6 +156,27 @@ namespace StreamMultiview
 
             Navigate(browser);
         }
+
+        private void NavigateOnLoad()
+        {
+            if (!string.IsNullOrEmpty(AddressBar1.Text))
+            {
+                Navigate(1);
+            }
+            if (!string.IsNullOrEmpty(AddressBar2.Text))
+            {
+                Navigate(2);
+            }
+            if (!string.IsNullOrEmpty(AddressBar3.Text))
+            {
+                Navigate(3);
+            }
+            if (!string.IsNullOrEmpty(AddressBar4.Text))
+            {
+                Navigate(4);
+            }
+        }
+
 
         private void AddressBar_KeyDown(object sender, KeyEventArgs e)
         {
