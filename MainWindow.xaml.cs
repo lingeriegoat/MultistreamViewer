@@ -1,6 +1,7 @@
-﻿using Microsoft.Web.WebView2.Wpf;
-using StreamMultiview.Properties;
-using System.ComponentModel;
+﻿using Microsoft.Web.WebView2.Core;
+using Microsoft.Web.WebView2.Wpf;
+using MultistreamViewer.Properties;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
@@ -23,6 +24,8 @@ namespace StreamMultiview
         private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
         private const int WM_EXITSIZEMOVE = 0x0232;
 
+        string userDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MultistreamViewer", "WebView2Profile");
+
 
         public MainWindow()
         {
@@ -40,11 +43,12 @@ namespace StreamMultiview
                     sizeof(int));
             };
 
+
             LoadSavedUrls();
             LoadWindowSizeAndState();
             LoadGridSize();
 
-            InitBrowsers();
+            SetupBrowserPersistence();
 
             InitBrowserNavigationEvents();
 
@@ -56,6 +60,27 @@ namespace StreamMultiview
             
         }
 
+        private void SetupBrowserPersistence()
+        {
+            wb1.CreationProperties = new CoreWebView2CreationProperties
+            {
+                UserDataFolder = userDataFolder
+            };
+            wb2.CreationProperties = new CoreWebView2CreationProperties
+            {
+                UserDataFolder = userDataFolder
+            };
+            wb3.CreationProperties = new CoreWebView2CreationProperties
+            {
+                UserDataFolder = userDataFolder
+            };
+            wb4.CreationProperties = new CoreWebView2CreationProperties
+            {
+                UserDataFolder = userDataFolder
+            };
+            InitBrowsers();
+        }
+
         private async void InitBrowsers()
         {
             await wb1.EnsureCoreWebView2Async();
@@ -63,6 +88,34 @@ namespace StreamMultiview
             await wb3.EnsureCoreWebView2Async();
             await wb4.EnsureCoreWebView2Async();
 
+            wb1.CoreWebView2InitializationCompleted += (s, e) =>
+            {
+                if (!e.IsSuccess)
+                {
+                    throw new Exception();
+                }
+            };
+            wb2.CoreWebView2InitializationCompleted += (s, e) =>
+            {
+                if (!e.IsSuccess)
+                {
+                    throw new Exception();
+                }
+            };
+            wb3.CoreWebView2InitializationCompleted += (s, e) =>
+            {
+                if (!e.IsSuccess)
+                {
+                    throw new Exception();
+                }
+            };
+            wb4.CoreWebView2InitializationCompleted += (s, e) =>
+            {
+                if (!e.IsSuccess)
+                {
+                    throw new Exception();
+                }
+            };
         }
 
 
