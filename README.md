@@ -12,4 +12,8 @@ The size, layout, and last visited URLs for each panel are saved, and will be re
 
 This application is intended for managing things like chats/titles/thumbnails/settings/etc without having to open each site in a new browser window.
 
-Requires .NET 8.0 runtime
+## Requirements
+
+Requires .NET 8.0 runtime, which can be downloaded directly from microsoft. Note that you only need the runtime, not the SDK.
+
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
