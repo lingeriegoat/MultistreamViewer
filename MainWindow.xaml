@@ -9,7 +9,8 @@
         Height="1080" 
         Width="1920" 
         WindowStartupLocation="CenterScreen"
-        Closing="Window_Closing"
+        Closing="Window_Closing" 
+        Loaded="Window_Loaded"
         >
 
     <!-- Dark Mode Resources -->

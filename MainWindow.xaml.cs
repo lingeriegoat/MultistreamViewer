@@ -44,16 +44,49 @@ namespace StreamMultiview
             LoadWindowSizeAndState();
             LoadGridSize();
 
-            // Initialize WebView2 controls
-            wb1.EnsureCoreWebView2Async();
-            wb2.EnsureCoreWebView2Async();
-            wb3.EnsureCoreWebView2Async();
-            wb4.EnsureCoreWebView2Async();
+            InitBrowsers();
+
+            InitBrowserNavigationEvents();
 
             NavigateOnLoad();
         }
 
-        
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private async void InitBrowsers()
+        {
+            await wb1.EnsureCoreWebView2Async();
+            await wb2.EnsureCoreWebView2Async();
+            await wb3.EnsureCoreWebView2Async();
+            await wb4.EnsureCoreWebView2Async();
+
+        }
+
+
+        private void InitBrowserNavigationEvents()
+        {
+            wb1.SourceChanged += (s, e) =>
+            {
+                AddressBar1.Text = wb1.Source?.ToString();
+            };
+            wb2.SourceChanged += (s, e) =>
+            {
+                AddressBar2.Text = wb2.Source?.ToString();
+            };
+            wb3.SourceChanged += (s, e) =>
+            {
+                AddressBar3.Text = wb3.Source?.ToString();
+            };
+            wb4.SourceChanged += (s, e) =>
+            {
+                AddressBar4.Text = wb4.Source?.ToString();
+            };
+        }
+
+
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
