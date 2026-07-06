@@ -124,18 +124,22 @@ namespace StreamMultiview
             wb1.SourceChanged += (s, e) =>
             {
                 AddressBar1.Text = wb1.Source?.ToString();
+                SaveUrls();
             };
             wb2.SourceChanged += (s, e) =>
             {
                 AddressBar2.Text = wb2.Source?.ToString();
+                SaveUrls();
             };
             wb3.SourceChanged += (s, e) =>
             {
                 AddressBar3.Text = wb3.Source?.ToString();
+                SaveUrls();
             };
             wb4.SourceChanged += (s, e) =>
             {
                 AddressBar4.Text = wb4.Source?.ToString();
+                SaveUrls();
             };
         }
 
