@@ -1,0 +1,30 @@
+﻿<Application x:Class="StreamMultiview.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:StreamMultiview"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <SolidColorBrush x:Key="WindowBackground" Color="#202020"/>
+        <SolidColorBrush x:Key="ControlBackground" Color="#2B2B2B"/>
+        <SolidColorBrush x:Key="ControlForeground" Color="White"/>
+
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="{StaticResource WindowBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource ControlForeground}"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="{StaticResource ControlBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource ControlForeground}"/>
+            <Setter Property="BorderBrush" Value="#555"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ControlBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource ControlForeground}"/>
+            <Setter Property="BorderBrush" Value="#555"/>
+        </Style>
+
+    </Application.Resources>
+</Application>
