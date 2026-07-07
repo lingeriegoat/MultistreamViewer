@@ -55,10 +55,12 @@ namespace StreamMultiview
             NavigateOnLoad();
         }
 
+#pragma warning disable CS1998
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             
         }
+#pragma warning restore C1998
 
         private void SetupBrowserPersistence()
         {
@@ -242,9 +244,32 @@ namespace StreamMultiview
 
         private void GoButton_Click(object sender, RoutedEventArgs e)
         {
+#pragma warning disable CS8604 // Possible null reference argument.
             int browser = int.Parse(((Button)sender).Tag.ToString());
+#pragma warning restore CS8604 // Possible null reference argument.
 
             Navigate(browser);
+        }
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.Tag is string tag)
+            {
+#pragma warning disable CS8600
+                WebView2 webView = tag switch
+                {
+                    "1" => wb1,
+                    "2" => wb2,
+                    "3" => wb3,
+                    "4" => wb4,
+                    _ => null
+                };
+#pragma warning restore CS8600
+
+                if (webView != null)
+                {
+                    webView?.Reload();   // This refreshes the current page
+                }
+            }
         }
 
         private void NavigateOnLoad()

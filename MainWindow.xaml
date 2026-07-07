@@ -65,6 +65,13 @@
                     Click="GoButton_Click"
                     Tag="1"/>
 
+                <Button Content="Refresh" 
+                        Width="70" 
+                        Margin="0,0,5,0"
+                        DockPanel.Dock="Right" 
+                        Click="RefreshButton_Click" 
+                        Tag="1"/>
+
                 <TextBox x:Name="AddressBar1"
                      Margin="0,0,2,0"
                      KeyDown="AddressBar_KeyDown"/>
@@ -87,6 +94,13 @@
                     DockPanel.Dock="Right"
                     Click="GoButton_Click"
                     Tag="2"/>
+
+                <Button Content="Refresh" 
+                        Width="70" 
+                        Margin="0,0,5,0"
+                        DockPanel.Dock="Right" 
+                        Click="RefreshButton_Click" 
+                        Tag="2"/>
 
                 <TextBox x:Name="AddressBar2"
                      Margin="0,0,2,0"
@@ -111,6 +125,13 @@
                     Click="GoButton_Click"
                     Tag="3"/>
 
+                <Button Content="Refresh" 
+                        Width="70" 
+                        Margin="0,0,5,0"
+                        DockPanel.Dock="Right" 
+                        Click="RefreshButton_Click" 
+                        Tag="3"/>
+
                 <TextBox x:Name="AddressBar3"
                      Margin="0,0,2,0"
                      KeyDown="AddressBar_KeyDown"/>
@@ -133,6 +154,13 @@
                     DockPanel.Dock="Right"
                     Click="GoButton_Click"
                     Tag="4"/>
+
+                <Button Content="Refresh" 
+                        Width="70" 
+                        Margin="0,0,5,0"
+                        DockPanel.Dock="Right" 
+                        Click="RefreshButton_Click" 
+                        Tag="4"/>
 
                 <TextBox x:Name="AddressBar4"
                      Margin="0,0,2,0"
