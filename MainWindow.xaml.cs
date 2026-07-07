@@ -254,21 +254,16 @@ namespace StreamMultiview
         {
             if (sender is Button btn && btn.Tag is string tag)
             {
-#pragma warning disable CS8600
                 WebView2 webView = tag switch
                 {
                     "1" => wb1,
                     "2" => wb2,
                     "3" => wb3,
                     "4" => wb4,
-                    _ => null
+                    _ => wb1 //default to pane 1
                 };
-#pragma warning restore CS8600
 
-                if (webView != null)
-                {
-                    webView?.Reload();   // This refreshes the current page
-                }
+                webView.Reload();
             }
         }
 
