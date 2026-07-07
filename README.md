@@ -1,6 +1,7 @@
 # MultistreamViewer
 
-<img width="1959" height="1253" alt="image" src="https://github.com/user-attachments/assets/514e095c-a465-4a5a-9183-39e481e36326" />
+<img width="1901" height="1344" alt="image" src="https://github.com/user-attachments/assets/a7f225e8-ab84-4141-9d22-52e8d929367f" />
+
 
 
 This is a straightforward program intended for monitoring up to 4 streams at once.
